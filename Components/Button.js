@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginHorizontal: 20,
+    marginBottom: 20,
   },
   title: {
     color: COLORS.white,
