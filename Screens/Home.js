@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+
+import categories from "../consts/categories";
 import COLOR from "../consts/colors";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -7,6 +17,21 @@ import { TextInput } from "react-native-web";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
+
+  const ListCategory = () => {
+    return (
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.listContainer}
+      >
+        {categories.map((catg, index) => (
+          <TouchableOpacity key={index} activeOpacity={0.8}></TouchableOpacity>
+        ))}
+      </ScrollView>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {/* header section */}
@@ -93,5 +118,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  listContainer: {
+    paddingVertical: 28,
+    paddingHorizontal: 20,
+    alignItems: "center",
   },
 });
