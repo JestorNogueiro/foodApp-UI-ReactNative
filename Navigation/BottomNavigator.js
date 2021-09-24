@@ -19,7 +19,7 @@ const BottomNavigator = () => {
           elevation: 0,
         },
 
-        activeTintColor: "#F9813A",
+        tabBarActiveTintColor: COLORS.primary,
         showLabel: "false",
       }}
     >
