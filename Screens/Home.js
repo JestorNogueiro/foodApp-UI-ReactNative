@@ -1,9 +1,14 @@
 import React from "react";
 import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
 import COLOR from "../consts/colors";
+
+import Icon from "react-native-vector-icons/MaterialIcons";
+import { TextInput } from "react-native-web";
+
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
+      {/* header section */}
       <View style={styles.header}>
         <View>
           <View style={{ flexDirection: "row" }}>
@@ -16,6 +21,16 @@ const Home = () => {
           source={require("../assets/images/person.png")}
           style={styles.image}
         />
+      </View>
+      {/* header section ends */}
+
+      {/* search input */}
+      <View style={styles.searchSection}>
+        <View style={styles.inputContainer}>
+          <Icon name="search" size={28} />
+          <TextInput style={styles.textInput} placeholder="Search for food" />
+        </View>
+        <View></View>
       </View>
     </SafeAreaView>
   );
@@ -32,6 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginHorizontal: 20,
   },
   subTitle: {
     color: COLOR.grey,
@@ -43,5 +59,27 @@ const styles = StyleSheet.create({
     width: 60,
     resizeMode: "contain",
     borderRadius: 50,
+  },
+  searchSection: {
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingHorizontal: 20,
+  },
+  inputContainer: {
+    flex: 1,
+    height: 50,
+    borderRadius: 10,
+    flexDirection: "row",
+    backgroundColor: COLOR.light,
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  textInput: {
+    flex: 1,
+    fontSize: 18,
+    paddingHorizontal: 5,
+    outline: "none !important",
+    borderWidth: 0,
   },
 });
