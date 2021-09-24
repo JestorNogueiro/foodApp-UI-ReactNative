@@ -30,7 +30,9 @@ const Home = () => {
           <Icon name="search" size={28} />
           <TextInput style={styles.textInput} placeholder="Search for food" />
         </View>
-        <View></View>
+        <View style={styles.sttBtn}>
+          <Icon name="tune" size={28} color={COLOR.white} />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -81,5 +83,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     outline: "none !important",
     borderWidth: 0,
+  },
+  sttBtn: {
+    width: 50,
+    height: 50,
+    marginLeft: 10,
+    backgroundColor: COLOR.primary,
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
