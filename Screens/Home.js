@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
 import COLOR from "../consts/colors";
 
@@ -6,6 +6,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import { TextInput } from "react-native-web";
 
 const Home = () => {
+  const [selectedCategory, setSelectedCategory] = useState(0);
   return (
     <SafeAreaView style={styles.container}>
       {/* header section */}
