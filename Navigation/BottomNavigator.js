@@ -20,7 +20,9 @@ const BottomNavigator = () => {
         },
 
         tabBarActiveTintColor: COLORS.primary,
-        showLabel: "false",
+
+        tabBarShowLabel: false,
+        headerShown: false,
       }}
     >
       <Tab.Screen
