@@ -26,7 +26,22 @@ const Home = () => {
         contentContainerStyle={styles.listContainer}
       >
         {categories.map((catg, index) => (
-          <TouchableOpacity key={index} activeOpacity={0.8}></TouchableOpacity>
+          <TouchableOpacity key={index} activeOpacity={0.8}>
+            <View
+              style={[
+                styles.categoryBtn,
+                {
+                  backgroundColor:
+                    selectedCategory == index ? COLOR.primary : COLOR.secondary,
+                },
+              ]}
+            >
+              <View onPress={(index) => setSelectedCategory(index)}>
+                {/* <Image source={{ require({' catg.image '})}} /> */}
+                <Text>{catg.name}</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     );
@@ -60,6 +75,9 @@ const Home = () => {
           <Icon name="tune" size={28} color={COLOR.white} />
         </View>
       </View>
+      <View>
+        <ListCategory />
+      </View>
     </SafeAreaView>
   );
 };
@@ -76,6 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginHorizontal: 20,
+    marginTop: 10,
   },
   subTitle: {
     color: COLOR.grey,
@@ -124,5 +143,14 @@ const styles = StyleSheet.create({
     paddingVertical: 28,
     paddingHorizontal: 20,
     alignItems: "center",
+  },
+  categoryBtn: {
+    height: 45,
+    width: 120,
+    marginRight: 7,
+    borderRadius: 50,
+    alignItems: "center",
+    paddingHorizontal: 10,
+    flexDirection: "row",
   },
 });
