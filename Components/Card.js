@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Image,
+  TouchableHighlight,
+} from "react-native";
 
 import COLORS from "../consts/colors";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -7,23 +14,29 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 const { width } = Dimensions.get("screen");
 const cardWidth = width / 2 - 30;
 
-const Card = ({ food }) => {
+const Card = ({ navigation, food }) => {
   return (
-    <View style={styles.card}>
-      <Image source={food.image} style={styles.cardImage} />
-      <View style={{ marginHorizontal: 20 }}>
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>{food.name}</Text>
-        <Text style={{ fontSize: 18, color: COLORS.grey, marginTop: 2 }}>
-          {food.ingredients}
-        </Text>
-      </View>
-      <View style={styles.priceSection}>
-        <Text style={{ fontWeight: "bold", fontSize: 18 }}>₹ {food.price}</Text>
-        <View style={styles.addItem}>
-          <Icon name="add" size={20} color={COLORS.white} />
+    <TouchableHighlight
+      onPress={() => navigation.navigate("DetailsScreen", food)}
+    >
+      <View style={styles.card}>
+        <Image source={food.image} style={styles.cardImage} />
+        <View style={{ marginHorizontal: 20 }}>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>{food.name}</Text>
+          <Text style={{ fontSize: 18, color: COLORS.grey, marginTop: 2 }}>
+            {food.ingredients}
+          </Text>
+        </View>
+        <View style={styles.priceSection}>
+          <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+            ₹ {food.price}
+          </Text>
+          <View style={styles.addItem}>
+            <Icon name="add" size={20} color={COLORS.white} />
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 
