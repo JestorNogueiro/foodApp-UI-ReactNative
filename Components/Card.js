@@ -30,6 +30,14 @@ const Card = ({ food }) => {
 export default Card;
 
 const styles = StyleSheet.create({
+  addItem: {
+    backgroundColor: COLORS.primary,
+    height: 30,
+    width: 30,
+    borderRadius: 50,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   card: {
     height: 220,
     width: cardWidth,
