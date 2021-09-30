@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  ScrollView,
+} from "react-native";
 
 import COLORS from "../consts/colors";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -15,7 +22,13 @@ const DetailsScreen = ({ navigation, route }) => {
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>Details</Text>
       </View>
       <ScrollView>
-        <View>
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            height: 280,
+          }}
+        >
           <Image source={item.image} style={{ height: 220 }} />
         </View>
       </ScrollView>
