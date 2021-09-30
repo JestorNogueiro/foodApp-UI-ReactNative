@@ -31,8 +31,18 @@ const DetailsScreen = ({ navigation, route }) => {
           <Image source={item.image} style={{ height: 220, width: 220 }} />
         </View>
         <View style={styles.details}>
-          <View>
-            <Text>{item.name}</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{ fontSize: 25, fontWeight: "bold", color: COLORS.white }}
+            >
+              {item.name}
+            </Text>
           </View>
         </View>
       </ScrollView>
