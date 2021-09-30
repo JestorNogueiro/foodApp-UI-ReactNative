@@ -26,7 +26,11 @@ const Home = () => {
         contentContainerStyle={styles.listContainer}
       >
         {categories.map((catg, index) => (
-          <TouchableOpacity key={index} activeOpacity={0.8}>
+          <TouchableOpacity
+            key={index}
+            activeOpacity={0.8}
+            onPress={() => setSelectedCategory(index)}
+          >
             <View
               style={[
                 styles.categoryBtn,
@@ -36,10 +40,23 @@ const Home = () => {
                 },
               ]}
             >
-              <View onPress={(index) => setSelectedCategory(index)}>
-                {/* <Image source={{ require({' catg.image '})}} /> */}
-                <Text>{catg.name}</Text>
+              <View style={styles.categoryImage}>
+                <Image
+                  source={catg.image}
+                  style={{ width: 35, height: 35, resizeMode: "cover" }}
+                />
               </View>
+              <Text
+                style={[
+                  styles.categoryName,
+                  {
+                    color:
+                      selectedCategory == index ? COLOR.white : COLOR.primary,
+                  },
+                ]}
+              >
+                {catg.name}
+              </Text>
             </View>
           </TouchableOpacity>
         ))}
@@ -152,5 +169,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 10,
     flexDirection: "row",
+  },
+  categoryImage: {
+    width: 35,
+    height: 35,
+    backgroundColor: COLOR.white,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  categoryName: {
+    fontSize: 15,
+    fontWeight: "bold",
+    marginLeft: 10,
   },
 });
