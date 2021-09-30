@@ -7,13 +7,16 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  FlatList,
+  TextInput,
 } from "react-native";
 
 import categories from "../consts/categories";
 import COLOR from "../consts/colors";
+import foodData from "../consts/foodData";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { TextInput } from "react-native-web";
+import Card from "../Components/Card";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
@@ -95,6 +98,13 @@ const Home = () => {
       <View>
         <ListCategory />
       </View>
+
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        data={foodData}
+        renderItem={({ item }) => <Card food={item} />}
+      />
     </SafeAreaView>
   );
 };
@@ -143,8 +153,10 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 18,
     paddingHorizontal: 5,
-    outline: "none !important",
-    borderWidth: 0,
+    outline: "none",
+    border: "none",
+    paddingVertical: 4,
+    marginRight: 2,
   },
   sttBtn: {
     width: 50,
