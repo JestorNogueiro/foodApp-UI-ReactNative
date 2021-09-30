@@ -1,12 +1,21 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
+
+import COLORS from "../consts/colors";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const DetailsScreen = () => {
   return (
-    <View>
-      <Text>Details screen</Text>
-    </View>
+    <SafeAreaView style={{ backgroundColor: COLORS.white }}>
+      <View style={styles.header}>
+        <Icon name="arrow-back-ios" size={28} />
+      </View>
+    </SafeAreaView>
   );
 };
 
 export default DetailsScreen;
+
+const styles = StyleSheet.create({
+  header: {},
+});
