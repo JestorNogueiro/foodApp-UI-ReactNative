@@ -18,7 +18,7 @@ import foodData from "../consts/foodData";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Card from "../Components/Card";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   const ListCategory = () => {
@@ -103,7 +103,7 @@ const Home = () => {
         showsVerticalScrollIndicator={false}
         numColumns={2}
         data={foodData}
-        renderItem={({ item }) => <Card food={item} />}
+        renderItem={({ item }) => <Card food={item} navigation={navigation} />}
       />
     </SafeAreaView>
   );
