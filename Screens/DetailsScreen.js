@@ -13,7 +13,6 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 const DetailsScreen = ({ navigation, route }) => {
   const item = route.param;
-  console.log(item);
 
   return (
     <SafeAreaView style={{ backgroundColor: COLORS.white }}>
@@ -29,8 +28,9 @@ const DetailsScreen = ({ navigation, route }) => {
             height: 280,
           }}
         >
-          <Image source={item.image} style={{ height: 220 }} />
+          <Image source={item.image} style={{ height: 220, width: 220 }} />
         </View>
+        <View style={styles.details}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -44,5 +44,13 @@ const styles = StyleSheet.create({
     height: 100,
     // justifyContent: "center",
     flexDirection: "row",
+  },
+  details: {
+    paddingHorizontal: 20,
+    paddingTop: 40,
+    paddingBottom: 60,
+    backgroundColor: COLORS.primary,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
 });
