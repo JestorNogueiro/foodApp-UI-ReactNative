@@ -19,15 +19,8 @@ const Card = ({ food }) => {
       </View>
       <View style={styles.priceSection}>
         <Text style={{ fontWeight: "bold", fontSize: 18 }}>₹ {food.price}</Text>
-        <View
-          style={{
-            backgroundColor: COLORS.primary,
-            height: 30,
-            width: 30,
-            borderRadius: 50,
-          }}
-        >
-          <Icon name="plus" />
+        <View style={styles.addItem}>
+          <Icon name="add" size={20} color={COLORS.white} />
         </View>
       </View>
     </View>
