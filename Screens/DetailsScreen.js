@@ -30,7 +30,11 @@ const DetailsScreen = ({ navigation, route }) => {
         >
           <Image source={item.image} style={{ height: 220, width: 220 }} />
         </View>
-        <View style={styles.details}></View>
+        <View style={styles.details}>
+          <View>
+            <Text>{item.name}</Text>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
