@@ -12,7 +12,7 @@ import COLORS from "../consts/colors";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 const DetailsScreen = ({ navigation, route }) => {
-  const item = route.param;
+  const item = route.params;
 
   return (
     <SafeAreaView style={{ backgroundColor: COLORS.white }}>
@@ -20,7 +20,7 @@ const DetailsScreen = ({ navigation, route }) => {
         <Icon name="arrow-back" size={28} onPress={() => navigation.goBack} />
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>Details</Text>
       </View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
             justifyContent: "center",
@@ -43,6 +43,10 @@ const DetailsScreen = ({ navigation, route }) => {
             >
               {item.name}
             </Text>
+            {/* favorite section */}
+            <View style={styles.itemContainer}>
+              <Icon name="favorite-border" size={25} color={COLORS.primary} />
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -66,5 +70,13 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+  },
+  itemContainer: {
+    backgroundColor: COLORS.white,
+    height: 50,
+    width: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 30,
   },
 });
