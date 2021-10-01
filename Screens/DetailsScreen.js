@@ -10,6 +10,7 @@ import {
 
 import COLORS from "../consts/colors";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import { AddToCardButton } from "../Components/Button";
 
 const DetailsScreen = ({ navigation, route }) => {
   const item = route.params;
@@ -55,6 +56,12 @@ const DetailsScreen = ({ navigation, route }) => {
             fugiat nostrum aspernatur, explicabo laudantium reprehenderit. Dolor
             excepturi est at!
           </Text>
+          <View style={styles.addToCartButton}>
+            <AddToCardButton
+              title="Add To Card"
+              onPress={() => navigation.navigate("Home")}
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -93,4 +100,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: COLORS.white,
   },
+  addToCartButton: {},
 });
