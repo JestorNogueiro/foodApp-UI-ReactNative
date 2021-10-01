@@ -11,7 +11,7 @@ const Button = ({ title, onPress = () => {} }) => {
     </TouchableOpacity>
   );
 };
-const AddToCardButton = ({ title, onPress = () => {} }) => {
+export const AddToCardButton = ({ title, onPress = () => {} }) => {
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
       <View style={{ backgroundColor: COLORS.white, ...styles.container }}>
@@ -21,7 +21,7 @@ const AddToCardButton = ({ title, onPress = () => {} }) => {
   );
 };
 
-export default { Button, AddToCardButton };
+export default Button;
 
 const styles = StyleSheet.create({
   container: {
