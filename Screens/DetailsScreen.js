@@ -48,6 +48,13 @@ const DetailsScreen = ({ navigation, route }) => {
               <Icon name="favorite-border" size={25} color={COLORS.primary} />
             </View>
           </View>
+          {/* dummy item details */}
+          <Text style={styles.itemDetails}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+            quaerat nemo recusandae, nobis ad earum commodi id sed magnam. Quae
+            fugiat nostrum aspernatur, explicabo laudantium reprehenderit. Dolor
+            excepturi est at!
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -78,5 +85,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 30,
+  },
+  itemDetails: {
+    marginTop: 10,
+    marginBottom: 5,
+    lineHeight: 22,
+    fontSize: 18,
+    color: COLORS.white,
   },
 });
