@@ -100,5 +100,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: COLORS.white,
   },
-  addToCartButton: {},
+  addToCartButton: {
+    borderRadius: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: COLORS.white,
+    textAlign: "center",
+    marginTop: 10,
+  },
 });
