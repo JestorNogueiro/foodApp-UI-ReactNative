@@ -59,7 +59,7 @@ const DetailsScreen = ({ navigation, route }) => {
           <View style={styles.addToCartButton}>
             <AddToCardButton
               title="Add To Card"
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => navigation.navigate("Cart")}
             />
           </View>
         </View>
